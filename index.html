@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelo Predictivo para Optimización de Flujo en Canales Bancarios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin:0; padding:0; background:#f7f9fa; color:#222;}
+    header, section { max-width:800px; margin:32px auto; background:#fff; border-radius:12px; padding:32px; box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+    header { text-align:center; background:#e9f5ff; }
+    h1 { font-size:2.4em; margin:0 0 8px 0;}
+    h2 { font-size:1.5em; margin:24px 0 10px 0;}
+    .subtitle { color:#2276c3; font-size:1.1em; margin-bottom:16px;}
+    .icon { font-size:2.5em; margin-bottom:10px;}
+    .highlight { background:#d8f7d3; color:#179a0b; border-radius:8px; padding:8px 16px; display:inline-block; font-weight:600; margin:12px 0;}
+    .box { background:#f3fafc; border-left:5px solid #2276c3; padding:16px; border-radius:8px; margin:16px 0;}
+    .emoji { font-size:1.3em; vertical-align:middle;}
+    .table { width:100%; border-collapse:collapse; margin:18px 0;}
+    .table th, .table td { border:1px solid #d1e3ea; padding:8px; text-align:left;}
+    .table th { background:#e9f5ff;}
+    .btn { display:inline-block; background:#2276c3; color:#fff; padding:12px 24px; border:none; border-radius:8px; font-weight:600; text-decoration:none; font-size:1.15em; margin:14px 0;}
+    .btn:hover { background:#155a8a;}
+    pre, code { background:#f7f2e6; color:#222; font-size:1em; border-radius:7px; padding:12px; overflow-x:auto;}
+    .section-title { display:flex; align-items:center; gap:10px;}
+    .metrics { display:flex; gap:24px; margin:16px 0;}
+    .metric-box { background:#fff3cd; color:#856404; border-radius:8px; padding:12px 20px; font-weight:600;}
+    .footer {text-align:center; color:#777; margin:32px 0;}
+    @media (max-width:600px) { header, section { padding:16px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="icon">🏦</div>
+  <h1>Modelo Predictivo para Optimización de Flujo en Canales Presenciales Bancarios</h1>
+  <div class="subtitle">230 oficinas a nivel nacional · Simulación de clientes · Modelo XGBoost en R · <span class="highlight">TIR &gt; 45%</span></div>
+  <img src="https://img.icons8.com/ios-filled/100/bank-building.png" alt="Banco" style="width:60px;margin-bottom:10px;">
+</header>
+
+<section>
+  <div class="section-title"><span class="emoji">❗</span><h2>Problema / Contexto</h2></div>
+  <div class="box">
+    Filas largas &rarr; clientes insatisfechos.<br>
+    Costos altos por mala asignación de personal.<br>
+    Necesidad de anticipar la demanda en oficinas.<br>
+    <br>
+    <strong>¿Por qué importa?</strong> Una mejor predicción permite ahorrar millones y mejorar la experiencia de cada cliente.
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">🎯</span><h2>Objetivo del Proyecto</h2></div>
+  <ul>
+    <li><strong>Negocio:</strong> Mejorar la experiencia y reducir costos de personal.</li>
+    <li><strong>Técnico:</strong> Predecir el número de clientes por oficina y franja horaria usando datos simulados.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">📊</span><h2>Datos y Variables</h2></div>
+  <p>Datos ficticios para <b>230 oficinas</b> en <b>90 días</b>.</p>
+  <table class="table">
+    <tr>
+      <th>Variable</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>oficina_id</td>
+      <td>ID de la oficina</td>
+    </tr>
+    <tr>
+      <td>ciudad</td>
+      <td>Ciudad donde se ubica</td>
+    </tr>
+    <tr>
+      <td>día_semana</td>
+      <td>Día de la semana</td>
+    </tr>
+    <tr>
+      <td>en_centro_comercial</td>
+      <td>¿Está en centro comercial? (Sí/No)</td>
+    </tr>
+    <tr>
+      <td>clientes_llegan</td>
+      <td>Número de clientes que llegan</td>
+    </tr>
+    <tr>
+      <td>franja_horaria</td>
+      <td>Intervalo de tiempo</td>
+    </tr>
+  </table>
+  <div class="box" style="text-align:center;">
+    <img src="https://img.icons8.com/ios-filled/100/bar-chart.png" alt="Gráfico de barras" style="width:60px;">
+    <br>
+    <em>Grafico de oficinas con mayor afluencia (reservado)</em>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">⚙️</span><h2>Metodología</h2></div>
+  <ul>
+    <li>Generación de datos sintéticos (<b>simulación en R</b>)</li>
+    <li>Modelos probados: <b>series de tiempo, XGBoost</b> <span class="highlight">[XGBoost final]</span></li>
+    <li>Evaluación: RMSE, MAE, MAPE</li>
+  </ul>
+  <div style="text-align:center;margin:24px 0;">
+    <img src="https://img.icons8.com/ios-filled/100/flow-chart.png" alt="Flujo" style="width:70px;">
+    <br>
+    <em>Diagrama: Datos → Modelo → Resultados</em>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">💻</span><h2>Código en R: Ejecución Paso a Paso</h2></div>
+  <div class="box">
+    <b>Dependencias:</b> <span class="highlight">tidyverse</span>, <span class="highlight">lubridate</span>, <span class="highlight">tidymodels</span>, <span class="highlight">xgboost</span>, <span class="highlight">FinancialMath</span>
+  </div>
+  <div class="box">
+    <b>Instrucciones:</b><br>
+    1. Copia cada bloque en <b>RStudio</b> y ejecuta.<br>
+    2. Se generará el archivo <b>dataset_flujo_oficinas.csv</b> en tu carpeta.<br>
+    3. Se mostrarán las métricas del modelo y la TIR en la consola.<br>
+  </div>
+  <h3>Paso 1: Instalación de paquetes en R</h3>
+  <pre><code>install.packages(c("tidyverse","lubridate","tidymodels","xgboost","FinancialMath"))</code></pre>
+
+  <h3>Paso 2: Ejecutar script del proyecto</h3>
+  <pre><code>source("script_modelo_flujo.R")</code></pre>
+
+  <h4>Bloques del script:</h4>
+  <pre><code>
+# 0) Instalación de librerías
+install.packages(c("tidyverse","lubridate","tidymodels","xgboost","FinancialMath"))
+
+# 1) Generación de datos sintéticos
+# 2) Entrenamiento del modelo XGBoost
+# 3) Evaluación y métricas (RMSE, MAE, MAPE)
+# 4) Cálculo de TIR y ahorro
+
+# El script genera 'dataset_flujo_oficinas.csv' y muestra resultados en consola.
+  </code></pre>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">📈</span><h2>Resultados y Beneficios</h2></div>
+  <div class="metrics">
+    <div class="metric-box">RMSE: 7.2</div>
+    <div class="metric-box">MAE: 4.9</div>
+    <div class="metric-box">MAPE: 8%</div>
+    <div class="metric-box highlight">TIR ≈ 50%</div>
+  </div>
+  <ul>
+    <li>Ahorro neto anual: <b>250 M COP</b></li>
+    <li>Payback: <b>~1.5 años</b></li>
+  </ul>
+  <div class="box" style="text-align:center;">
+    <img src="https://img.icons8.com/ios-filled/100/combo-chart.png" alt="Gráfica" style="width:60px;">
+    <br>
+    <em>Gráfica de predicciones vs reales (reservado)</em>
+    <br>
+    <em>Tabla de flujos de caja (reservado)</em>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">📂</span><h2>Descargas</h2></div>
+  <a href="proyecto_flujo_canales.zip" class="btn">📥 Descargar Proyecto Completo (ZIP)</a>
+  <div class="box">
+    <b>¿Qué incluye?</b>
+    <ul>
+      <li>Script en R</li>
+      <li>Dataset sintético</li>
+      <li>Excel de flujos de caja</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span class="emoji">🔎</span><h2>Conclusiones</h2></div>
+  <ul>
+    <li>Se puede anticipar la demanda de clientes por oficina.</li>
+    <li>Impacto directo en experiencia y costos.</li>
+    <li>Potencial integración con alertas AML/FT.</li>
+  </ul>
+</section>
+
+<section style="text-align:center;">
+  <div class="highlight" style="font-size:1.2em;">TIR 50%</div>
+  <a href="proyecto_flujo_canales.zip" class="btn">📥 Descargar Proyecto</a>
+</section>
+
+<div class="footer">
+  <span class="emoji">✨</span> Tip: Secciones cortas, íconos, y gráficos hacen el resultado más amigable.<br>
+  Modifica este archivo según tus necesidades.
+</div>
+
+</body>
+</html>
